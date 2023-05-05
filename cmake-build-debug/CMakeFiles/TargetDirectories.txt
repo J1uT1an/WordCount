@@ -1,0 +1,3 @@
+D:/GitlabDemo/WordCount/cmake-build-debug/CMakeFiles/WordCount.dir
+D:/GitlabDemo/WordCount/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitlabDemo/WordCount/cmake-build-debug/CMakeFiles/rebuild_cache.dir
