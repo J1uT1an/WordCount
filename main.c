@@ -60,12 +60,12 @@ int count_chars(char *filename) {
     return count;
 }
 
+// 统计单词数
 /*
  * 在 count_words 函数中，通过循环检查单词中的字符，使用 isalnum 函数判断是否包含非字母数字字符。
  * 这样可以排除掉不包含字母或数字的单词，确保只计算有效的单词。这个修改的目的是提高单词计数的准确性。
  * @author luxintong
  * */
-// 统计单词数
 int count_words(char *filename) {
     FILE *fp;
     char line[MAX_LINE_LEN];
