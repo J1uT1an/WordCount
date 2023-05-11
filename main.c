@@ -14,21 +14,6 @@ int main(int argc, char *argv[]) {
     char *parameter;
     int result;
 
-    /*// 默认使用当前目录下的文件
-    strcpy(filename, "./input.txt");
-
-    // 检查命令行参数
-    if (argc < 2 || argc > 3) {
-        printf("用法: %s [-c | -w] [文件名]\n", argv[0]);
-        return 1;
-    }
-
-    // 处理参数
-    parameter = argv[1];
-    if (argc == 3) {
-        strcpy(filename, argv[2]);
-    }*/
-
     // 检查命令行参数
     if (argc != 3) {
         printf("用法: %s [-c | -w] [文件名]\n", argv[0]);
@@ -91,7 +76,23 @@ int count_words(char *filename) {
     while (fgets(line, MAX_LINE_LEN, fp) != NULL) {
         word = strtok(line, " ,\t\n"); // 以空格、逗号、水平制表符和换行符为分隔符
         while (word != NULL) {
-            count++;
+            // 修改：检查单词是否包含非字母数字字符
+            int i;
+            int valid_word = 1;
+            for (i = 0; word[i] != '\0'; i++) {
+                if (!isalnum(word[i])) {
+                    valid_word = 0;
+                    break;
+                }
+            }
+
+            // 进一步处理特殊情况，根据需要修改
+            // 例如，可以考虑处理连字符、缩写单词或包含特殊字符的单词
+
+            if (valid_word) {
+                count++;
+            }
+
             word = strtok(NULL, " ,\t\n");
         }
     }
